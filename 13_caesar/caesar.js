@@ -1,11 +1,13 @@
 const caesar = function() {
     const text = arguments[0].split("");
+    const move = arguments[1];
     const out = [];
-    console.log(text);
   
-  // remake tomorrow
   
-  // a variable like POS is needed
+    // remake tomorrow
+  
+    // a variable like POS is needed
+    // remake from 0
     const chars = [
       "a",
       "b",
@@ -38,23 +40,50 @@ const caesar = function() {
     for (i = 0; i < text.length; i++) {
       var letter = text[i];
   
-      for (a = 0; a < chars.length; a++) {
-        if (letter == chars[a].toLowerCase()) {
-          var pos = chars[a + arguments[1]];
+      var pos = 0;
   
-          while (pos > chars.length) {
-            pos = pos - chars.length;
+      for (a = 0; a < chars.length; a++) {
+        if (letter == chars[a].toUpperCase()) {
+          pos = a + move;
+  
+          if (move < 1) {
+            while (pos < 0) {
+              pos = pos + chars.length;
+            }
+          } else if (move >= 1) {
+            while (pos >= chars.length) {
+              pos = pos - chars.length;
+            }
           }
-          out.push(chars[i]);
-          
-        } else if (letter == chars[a].toUpperCase()) {
-          out.push(chars[a + arguments[1]].toUpperCase());
+  
+          out.push(chars[pos].toUpperCase());
+        } else if (letter == chars[a].toLowerCase()) {
+          pos = a + move;
+  
+          if (move < 1) {
+            while (pos < 0) {
+              pos = pos + chars.length;
+            }
+          } else if (move >= 1) {
+            while (pos >= chars.length) {
+              pos = pos - chars.length;
+            }
+          }
+          out.push(chars[pos].toLowerCase());
+        } else if (
+          letter == "," ||
+          letter == "." ||
+          letter == " " ||
+          letter == "!"
+        ) {
+          out.push(letter);
+          break;
         }
       }
-  
     }
   
-    console.log(out.join("").toString());
+  
+    return(out.join("").toString());
   }
 
 // Do not edit below this line
