@@ -102,7 +102,7 @@ console.log(lived)
 
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris also in the directory of this file
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
@@ -111,4 +111,3 @@ console.log(lived)
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
-    
