@@ -147,11 +147,11 @@ const data = [
 ];
 
 const trp = data.reduce((obj,i)=>{
-  if (!obj[i]){
-    obj[i] = 0
-  } 
-  obj[i]++; 
-
-  return obj;
+ if(!obj[i]){
+  obj[i] = 0
+ }
+ obj[i]++;
+ return obj
 }, {})
 console.log(trp)
+// all the counters are properties of the counter object
