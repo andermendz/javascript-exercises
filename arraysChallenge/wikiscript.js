@@ -1,19 +1,15 @@
-console.log("jeje")
 const doc = Array.from(document.querySelectorAll(" .mw-category-group li"))
-
 
 console.log(doc)
 
-doc.forEach((d)=>{
+const wiki = doc.filter((d)=>{
     let txt = d.textContent
     let sr = txt.search("de")
-    console.log(d.textContent)
-
-
+    if (sr > 0) {
+        return(d.textContent)
+    }
     }
 )
 
-let v = "Boulevard Malesherbes"
+console.log(wiki)
 
-let s = v.search("de")
-console.log(s)

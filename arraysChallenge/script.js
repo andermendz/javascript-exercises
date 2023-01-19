@@ -62,52 +62,77 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's
 
 const filta = inventors.filter((inv) => {
-  return inv.year >= 1500 && inv.year < 1600
- })
- console.log(filta)
+  return inv.year >= 1500 && inv.year < 1600;
+});
+console.log(filta);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
-const mapa = inventors.map((inv)=>{
-  return inv.first + " " +inv.last
-})
-console.log(mapa)
-
+const mapa = inventors.map((inv) => {
+  return inv.first + " " + inv.last;
+});
+console.log(mapa);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
 
-const stro = inventors.sort((a,b)=>{
-  return a.year - b.year
-})
-console.log(stro)
+const stro = inventors.sort((a, b) => {
+  return a.year - b.year;
+});
+console.log(stro);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
 
-    const rcdm = inventors.reduce((total, inv)=>{
-      let year = inv.passed - inv.year
-      return year + total
-    },0)
+const rcdm = inventors.reduce((total, inv) => {
+  let year = inv.passed - inv.year;
+  return year + total;
+}, 0);
 
-    console.log(rcdm)
+console.log(rcdm);
 // 5. Sort the inventors by years lived
-     
-const lived = inventors.sort((a,b)=>{
-  
-  return (a.passed - a.year) - (b.passed - b.year)
-})
 
-console.log(lived)
+const lived = inventors.sort((a, b) => {
+  return a.passed - a.year - (b.passed - b.year);
+});
 
+console.log(lived);
 
-    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris also in the directory of this file
+// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris also in the directory of this file
 
-    // 7. sort Exercise
-    // Sort the people alphabetically by last name
+// const doc = Array.from(document.querySelectorAll(" .mw-category-group li"));
 
-    // 8. Reduce Exercise
-    // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+// console.log(doc);
 
+// const wiki = doc.filter((d) => {
+//   let txt = d.textContent;
+//   let sr = txt.search("de");
+//   if (sr > 0) {
+//     return d.textContent;
+//   }
+// });
+
+console.log(wiki);
+// 7. sort Exercise
+// Sort the people alphabetically by last name
+
+// 8. Reduce Exercise
+// Sum up the instances of each of these
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck",
+  "pogostick",
+];
