@@ -113,10 +113,19 @@ console.log(lived);
 //   }
 // });
 
-console.log(wiki);
+// console.log(wiki);
+
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+console.log(people)
+var srtp = people.sort((a,b)=>{
+  const [aLast, aFirst] = a.split(",")
+  const [bLast, bFirst] = b.split(",")
 
+  return aLast > bLast ? 1 : -1 ;
+})
+
+console.log(srtp)
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = [
@@ -136,3 +145,13 @@ const data = [
   "truck",
   "pogostick",
 ];
+
+const trp = data.reduce((obj,i)=>{
+  if (!obj[i]){
+    obj[i] = 0
+  } 
+  obj[i]++; 
+
+  return obj;
+}, {})
+console.log(trp)
